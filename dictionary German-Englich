@@ -5,3 +5,4 @@ vocabulary = {"ausschlaggebend":{"meaning": "decisive","example_sentence": "Die 
 "akribisch":{"meaning":"meticulous","example_sentence": "Er führte eine akribische Untersuchung durch, um alle Fehler im System zu finden.","learned": False},
 "Abgabetermin":{"meaning":"deadline","example_sentence":"Der Abgabetermin für die Abschlussarbeit ist nächsten Freitag.","learned": False},
 "Beharrlichkeit":{"meaning":"persistence","example_sentence":" Mit Beharrlichkeit und Entschlossenheit überwand sie alle Schwierigkeiten auf ihrem Weg zum Erfolg.","learned": False},
+"beflissen":{"meaning":"attentive",
