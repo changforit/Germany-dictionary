@@ -1,0 +1,5 @@
+# Dictionary to store vocabulary data
+# vocabulary = { "word1": {"meaning": "meaning1", "example_sentence": "example sentence 1", "learned": False}
+
+vocabulary = {"ausschlaggebend":{"meaning": "decisive","example_sentence": "Die Erfahrung des Teams war ausschlaggebend für den Erfolg des Projekts.", "learned": False},
+"akribisch":{"meaning":"meticulous","example_sentence": "Er führte eine akribische Untersuchung durch, um alle Fehler im System zu finden.","learned": False}
