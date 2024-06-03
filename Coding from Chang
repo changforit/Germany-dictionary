@@ -1,5 +1,8 @@
 import random
 def show_new_words(vocabulary, quantity = 5):
-  unknown_words = words from 
-    for word in vocabulary:
-      if 
+  for word in vocabulary:
+    if 'learned'== False:
+      unknown_words = word
+  if len(unknown_words) < quantity:
+    print("There are not enough unknown words in the dictionary.")
+    return
