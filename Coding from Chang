@@ -1,1 +1,2 @@
-
+import random
+def show_new_words(
