@@ -1,4 +1,7 @@
 import random
+
+selected_words = random.sample(vocabulary, quantity) 
+
 def show_new_words(vocabulary, quantity = 5):
   for word in vocabulary:
     if 'learned'== False:
