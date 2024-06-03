@@ -1,2 +1,5 @@
 import random
-def show_new_words(
+def show_new_words(vocabulary, quantity = 5):
+  unknown_words = words from 
+    for word in vocabulary:
+      if 
