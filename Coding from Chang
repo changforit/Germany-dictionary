@@ -20,7 +20,7 @@ def select_new_words(vocabulary, count = 5):
 
   return selected_words
 
-selected_words = select_new_words(vocaablary)
+selected_words = select_new_words(vocabulary)
 
 
 
