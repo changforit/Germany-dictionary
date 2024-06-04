@@ -1,3 +1,4 @@
+vocabulary = { "word1": {"meaning": "meaning1", "example_sentence": "example sentence 1", "learned": False}
 import random
 
 selected_words = random.sample(vocabulary, quantity) 
@@ -11,4 +12,6 @@ def show_new_words(vocabulary, quantity = 5):
     return
 
   for word in selected_words:
-    print(f'
+    print(f'meaning:{word["meaning"]}')
+    print(f'example_sentence:{word["example_sentence"]}\n')
+    word["learned"] 0 True
