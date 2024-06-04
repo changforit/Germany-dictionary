@@ -1,17 +1,49 @@
 vocabulary = { "word1": {"meaning": "meaning1", "example_sentence": "example sentence 1", "learned": False}
 import random
 
-selected_words = random.sample(vocabulary, quantity) 
-
-def show_new_words(vocabulary, quantity = 5):
+def select_new_words(vocabulary, count = 5):
   for word in vocabulary:
     if 'learned'== False:
-      unknown_words = word
-  if len(unknown_words) < quantity:
-    print("There are not enough unknown words in the dictionary.")
+      unlearned_words = word
+
+  if len(unlearned_words) < count:
+    print("There are not enough unlearned words in the dictionary.")
     return
 
+  selected_words = random.sample(list(unlearned_words.items()), count) 
+
   for word in selected_words:
-    print(f'meaning:{word["meaning"]}')
-    print(f'example_sentence:{word["example_sentence"]}\n')
-    word["learned"] = True
+    print(f'Word:{word}\n')
+    print(f'Meaning:{word["meaning"]}\n')
+    print(f'Example Sentence:{word["example_sentence"]}\n')
+    vocabulary[word]["learned"] = True
+
+  return selected_words
+
+selected_words = select_new_words(vocaablary)
+
+
+
+import random
+
+def select_new_words(vocabulary, count=5):
+    # Filter the vocabulary to find words that have not been learned yet
+    unlearned_words = {key: value for key, value in vocabulary.items() if not value['learned']}
+    
+    # Check if there are enough unlearned words to meet the count
+    if len(unlearned_words) < count:
+        print("There are not enough unlearned words remaining.")
+        return []
+
+    # Randomly select words
+    selected_words = random.sample(list(unlearned_words.items()), count)
+    
+    # Mark the selected words as learned
+    for word, details in selected_words:
+        vocabulary[word]['learned'] = True
+        print(f"Word: {word}\nMeaning: {details['meaning']}\nExample Sentence: {details['example_sentence']}\n")
+    
+    return selected_words
+
+# Example use of the function with your vocabulary dictionary
+selected_words = select_new_words(vocabulary)
