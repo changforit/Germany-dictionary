@@ -9,3 +9,6 @@ def show_new_words(vocabulary, quantity = 5):
   if len(unknown_words) < quantity:
     print("There are not enough unknown words in the dictionary.")
     return
+
+  for word in selected_words:
+    print(f'
