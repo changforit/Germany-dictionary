@@ -14,4 +14,4 @@ def show_new_words(vocabulary, quantity = 5):
   for word in selected_words:
     print(f'meaning:{word["meaning"]}')
     print(f'example_sentence:{word["example_sentence"]}\n')
-    word["learned"] 0 True
+    word["learned"] = True
