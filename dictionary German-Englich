@@ -1,5 +1,5 @@
 # Dictionary to store vocabulary data
-# vocabulary = { "word1": {"meaning": "meaning1", "example_sentence": "example sentence 1", "learned": False}
+# vocabulary = { "word1": {"meaning": "meaning1", "example_sentence": "example sentence 1", "learned": False}}
 
 vocabulary = {'ausschlaggebend': {'meaning': 'decisive', 'example_sentence': 'Die Erfahrung des Teams war ausschlaggebend für den Erfolg des Projekts.', 'learned': False}, 
 'akribisch': {'meaning': 'meticulous', 'example_sentence': 'Er führte eine akribische Untersuchung durch, um alle Fehler im System zu finden.', 'learned': False}, 
@@ -59,4 +59,4 @@ vocabulary = {'ausschlaggebend': {'meaning': 'decisive', 'example_sentence': 'Di
 'reumütig': {'meaning': 'remorseful, repentant ', 'example_sentence': 'Du wirst bald reumütig zu mir zurückkommen', 'learned': False}, 
 'risikofreudig': {'meaning': 'prepared to take risks', 'example_sentence': 'Er ist sehr risikofreudig.', 'learned': False}, 
 'Saft': {'meaning': 'juice', 'example_sentence': 'Aus dem alten Obst stellt sie Saft her.', 'learned': False}, 
-'Straßenschäden': {'meaning': 'damage to the road surface', 'example_sentence': 'Achtung es gibt hier Straßenschäden', 'learned': False}
+'Straßenschäden': {'meaning': 'damage to the road surface', 'example_sentence': 'Achtung es gibt hier Straßenschäden', 'learned': False}}
