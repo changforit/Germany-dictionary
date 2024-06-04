@@ -37,7 +37,7 @@ vocabulary = {'ausschlaggebend': {'meaning': 'decisive', 'example_sentence': 'Di
 'Mündigkeit': {'meaning': 'maturity', 'example_sentence': 'Die Erziehung zielt darauf ab, die Mündigkeit der Jugendlichen zu fördern, damit sie ihre eigenen Entscheidungen treffen und für ihr Handeln verantwortlich sind.', 'learned': False}, 
 'nachlassen': {'meaning': 'to diminish', 'example_sentence': 'Nach dem langen Training ließ seine Konzentration langsam nach, und er begann, Fehler zu machen.', 'learned': False}, 
 'niedergeschlagen': {'meaning': 'depressed', 'example_sentence': 'Nach der Absage des Traumjobs war sie niedergeschlagen und fühlte sich entmutigt.', 'learned': False}, 
-'netterweise': {'meaning': 'kindly', 'example_sentence': 'Sie hat mir netterweise geholfen, die schweren Einkaufstüten zu tragen, als meine Hände voll waren.', 'learned': False}
+'netterweise': {'meaning': 'kindly', 'example_sentence': 'Sie hat mir netterweise geholfen, die schweren Einkaufstüten zu tragen, als meine Hände voll waren.', 'learned': False},
 'Oberfläche ': {'meaning': 'surface', 'example_sentence': 'Die Öberfläche des Tisches ist verschmutzt', 'learned': False}, 
 'Oft ': {'meaning': 'often,frequently ', 'example_sentence': 'Der Bus fährt nicht oft', 'learned': False}, 
 'Ohnmacht': {'meaning': 'faint', 'example_sentence': 'Plötzlich fiel sie ihn Ohnmacht', 'learned': False}, 
