@@ -60,5 +60,5 @@ def select_new_words(vocabulary, count=5):
 selected_words = select_new_words(vocabulary)
 
 
-
+#print(help(vocabulary))
 
