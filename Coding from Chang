@@ -1,29 +1,6 @@
 
 import random
 
-def select_new_words(vocabulary, count = 5):
-  unlearned_words = {word: details for word, details in vocabulary.items() if not details['learned']}
-
-  if len(unlearned_words) < count:
-    print("There are not enough unlearned words in the dictionary.")
-    return 
-
-  selected_words = random.sample(list(unlearned_words.items()), count) 
-
-  for word, details in selected_words:
-    print(f'Word:{word}')
-    print(f'Meaning:{details["meaning"]}')
-    print(f'Example Sentence:{details["example_sentence"]}\n')
-    vocabulary[word]["learned"] = True
-
-  return selected_words
-
-selected_words = select_new_words(vocabulary)
-
-
-
-import random
-
 def select_new_words(vocabulary, count=5):
     """
     Selects a random set of unlearned words from the vocabulary.
@@ -58,6 +35,32 @@ def select_new_words(vocabulary, count=5):
 
 # Example usage
 selected_words = select_new_words(vocabulary)
+
+
+
+import json
+
+def save_vocabulary(vocabulary, filename='vocabulary.json'):
+    with open(filename, 'w', encoding='utf-8') as file:
+        json.dump(vocabulary, file, ensure_ascii=False, indent=4)
+
+def load_vocabulary(filename='vocabulary.json'):
+    with open(filename, 'r', encoding='utf-8') as file:
+        return json.load(file)
+
+# After running select_new_words, save the updated vocabulary
+save_vocabulary(vocabulary)
+
+# Load the vocabulary at the start
+vocabulary = load_vocabulary()
+
+# Select new words and display them
+selected_words = select_new_words(vocabulary)
+
+# Save the updated vocabulary
+save_vocabulary(vocabulary)
+
+
 
 
 
