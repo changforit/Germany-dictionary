@@ -21,31 +21,44 @@ def select_new_words(vocabulary, count = 5):
 selected_words = select_new_words(vocabulary)
 
 
+
 import random
 
 def select_new_words(vocabulary, count=5):
-    # Create a dictionary of unlearned words
+    """
+    Selects a random set of unlearned words from the vocabulary.
+
+    Args:
+        vocabulary (dict): A dictionary containing words and their details.
+        count (int, optional): Number of words to select. Defaults to 5.
+
+    Returns:
+        list: List of selected word details.
+    """
+    # Filter unlearned words
     unlearned_words = {word: details for word, details in vocabulary.items() if not details['learned']}
 
-    # Check if there are enough unlearned words to meet the count
+    # Check if there are enough unlearned words
     if len(unlearned_words) < count:
         print("There are not enough unlearned words in the dictionary.")
-        return
+        return []
 
-    # Randomly select words
+    # Select random words
     selected_words = random.sample(list(unlearned_words.items()), count)
 
-    # Print details and update the 'learned' status
+    # Mark selected words as learned
     for word, details in selected_words:
         print(f'Word: {word}')
         print(f'Meaning: {details["meaning"]}')
         print(f'Example Sentence: {details["example_sentence"]}\n')
-        vocabulary[word]['learned'] = True
+        vocabulary[word]["learned"] = True
 
+    # Return selected words
     return selected_words
 
-# Example call to the function, assuming 'vocabulary' is defined as a dictionary with the proper structure
+# Example usage
 selected_words = select_new_words(vocabulary)
+
 
 
 
