@@ -1,0 +1,67 @@
+# Imports
+import json
+import random
+import re
+from vocabulary_data import vocabulary  # type: ignore
+
+# Function Definitions
+def normalize_text(text):
+    text = text.lower().strip()
+    text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
+    return text
+
+def select_new_words(vocabulary, count=5):
+    unlearned_words = {word: details for word, details in vocabulary.items() if not details['learned']}
+    if len(unlearned_words) < count:
+        print("There are not enough unlearned words in the dictionary.")
+        return []
+    selected_words = random.sample(list(unlearned_words.items()), count)
+    for word, details in selected_words:
+        print(f'Word: {word}\nMeaning: {details["meaning"]}\nExample Sentence: {details["example_sentence"]}\n')
+        vocabulary[word]["learned"] = True
+    return selected_words
+
+def quiz(vocabulary, num_questions=5):
+    unlearned_words = [word for word, details in vocabulary.items() if not details['learned']]
+    questions = random.sample(unlearned_words, min(len(unlearned_words), num_questions))
+    score = 0
+    for word in questions:
+        print(f"What does the word '{word}' mean?")
+        user_answer = input("Your answer: ").strip().lower()
+        correct_answer = normalize_text(vocabulary[word]['meaning'])
+        if normalize_text(user_answer) == correct_answer:
+            print("Correct!")
+            score += 1
+            vocabulary[word]['learned'] = True
+        else:
+            print(f"Wrong! The correct answer is '{vocabulary[word]['meaning']}'.")
+
+        print(f"Example sentence: {vocabulary[word]['example_sentence']}\n")
+    print(f"Your score: {score}/{num_questions}")
+    return score
+
+def save_vocabulary(vocabulary, filename='vocabulary.json'):
+    try:
+        with open(filename, 'w', encoding='utf-8') as file:
+            json.dump(vocabulary, file, ensure_ascii=False, indent=4)
+    except Exception as e:
+        print(f"Failed to save vocabulary: {e}")
+
+def load_vocabulary(filename='vocabulary.json'):
+    try:
+        with open(filename, 'r', encoding='utf-8') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print("Vocabulary file not found, loading default vocabulary.")
+        return vocabulary
+    except Exception as e:
+        print(f"Failed to load vocabulary: {e}")
+        return {}
+
+# Main Execution Flow
+if __name__ == '__main__':
+    vocabulary = load_vocabulary()
+    selected_words = select_new_words(vocabulary)
+    save_vocabulary(vocabulary)
+    quiz(vocabulary)
+    save_vocabulary(vocabulary)
